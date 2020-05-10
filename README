@@ -1,2 +1,3 @@
 This files load is here:
-raddit-base-image.json - json file for create Parcer gcloud instance. 
+raddit-base-image.json - json file for create Parcer gcloud instance.
+instance.tf - terraform confing for create VM in Google Cloud Platform and start deploy.sh script.  

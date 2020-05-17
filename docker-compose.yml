@@ -1,0 +1,24 @@
+version: '2'
+services:
+    mongo-database:
+	build: .
+	volume:
+	    - mongo-data:/data/db
+	networks: 
+	    - raddit-network
+
+    raddit:
+	build: .
+	environment:
+	     - DATABASE_HOST=mongo-database
+	ports:
+	     - 9292:9292
+	networks:
+	    - raddit-network
+	depends_on:
+	    - mongo-database
+
+volumes:
+  mongo-data: {}
+networks:
+  raddit-network: {}
